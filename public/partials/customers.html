@@ -1,0 +1,29 @@
+<div ng-controller="customersController">
+  <h1>Customers Controller</h1>
+  <hr>
+  <h3>Add a new customer</h3>
+  <form>
+    <!-- if operator is true, return expression 1, otherwise return expression 2 -->
+
+    <!-- This has access to scope.errors in the customer factory, it determines what to write -->
+<!--     <p>{{errors == "Customer already registered" ? "Customer already registered" : ''}}</p> -->
+
+    <p>{{errors}}</p>
+
+    <p><input type="text" ng-model="newCustomer.name">
+      <!-- going to controller -->
+    <input type="submit" ng-click="addCustomer()"></p>
+  </form>
+  <table>
+    <thead>
+      <th>Customer Name</th>
+      <th>Created Date</th>
+      <th>Actions</th>
+    </thead>
+    <tr ng-repeat='customer in customers'>
+      <td>{{customer.name}}</td>
+      <td>{{customer.created_at}}</td>
+      <td><button ng-click="removeCustomer(customer._id)">Remove</button></td>
+    </tr>
+  </table>
+</div>

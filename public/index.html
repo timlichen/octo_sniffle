@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="#">
+  <head>
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.min.js"></script>
+    <!-- <script src="./lib/***.js"></script> -->
+    <!-- <script src="./lib/***.js"></script> -->
+    <script>
+
+    ordersCustomers.config(function ($routeProvider) {
+      $routeProvider
+        .when('/customers',{
+            templateUrl: 'partials/customers.html'
+        })
+        .when('/orders',{
+            templateUrl: 'partials/orders.html'
+        })
+        .otherwise({
+          redirectTo: '/customers'
+        });
+    });
+    </script>
+
+    </head>
+    <body>
+      <div ng-app='ordersCustomers_app'>
+        <a href="#/customers">Customers</a> | <a href="#/orders">Orders</a>
+        <div ng-view="">
+        </div>
+    </div>
+    </body>
+</html>
